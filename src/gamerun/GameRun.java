@@ -6,9 +6,9 @@ public class GameRun {
 
 	public static void main(String[] args) {
 		
-		GameManager logica = new GameManager();
+		GameManager run = new GameManager();
 		
-		logica.runGame();
+		run.runGame();
 		
 	}
 }
