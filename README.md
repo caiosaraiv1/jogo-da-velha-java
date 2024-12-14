@@ -18,7 +18,7 @@ Este projeto implementa o jogo da velha (tic-tac-toe) em Java. O objetivo é cri
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/caioasaraiv1/jogo-da-velha-java.git
+   git clone https://github.com/caiosaraiv1/jogo-da-velha-java.git
    ```
 
 2. Abra o projeto no Eclipse IDE ou em outro editor de sua preferência.
