@@ -1,50 +1,114 @@
-# Jogo da Velha - Java
+# 🎮 Jogo da Velha em Java
 
-Este projeto implementa o jogo da velha (tic-tac-toe) em Java. O objetivo é criar uma versão simples do jogo, onde dois jogadores podem alternar jogadas até que um vença ou o jogo termine em empate.
+Um jogo da velha (Tic Tac Toe) desenvolvido em Java, implementando uma estrutura orientada a objetos com separação clara de responsabilidades entre as classes.
 
-## Funcionalidades
+## 📋 Características
 
-- Dois jogadores alternam entre "X" e "O".
-- O jogo verifica automaticamente se algum jogador ganhou ou se houve empate.
-- A entrada do jogador é feita por números de 1 a 9, representando as posições do tabuleiro.
-- O jogo termina assim que um vencedor é encontrado ou em caso de empate.
+- Interface via console
+- Sistema de dois jogadores (X e O)
+- Verificação automática de vitória
+- Detecção de empate
+- Validação de jogadas
+- Tabuleiro 3x3 clássico
 
-## Tecnologias Utilizadas
+## 🏗️ Estrutura do Projeto
 
-- Java
+O projeto está organizado em três pacotes principais:
 
-## Como Executar
+```
+src/
+├── board/
+│   └── Board.java         # Gerencia o tabuleiro e sua visualização
+├── gamerun/
+│   └── GameRun.java       # Classe principal que inicia o jogo
+└── jogodavelha/
+    └── GameManager.java   # Controla a lógica do jogo
+```
+
+## 🔧 Pré-requisitos
+
+- Java JDK 8 ou superior
+- IDE Java (Eclipse, IntelliJ, NetBeans, etc) ou linha de comando
+
+## 🚀 Como Compilar e Executar
 
 1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/jogo-velha.git
+cd jogo-velha
+```
 
-   ```bash
-   git clone https://github.com/caiosaraiv1/jogo-da-velha-java.git
-   ```
+2. Compile o projeto:
+```bash
+javac gamerun/GameRun.java
+```
 
-2. Abra o projeto no Eclipse IDE ou em outro editor de sua preferência.
+3. Execute o jogo:
+```bash
+java gamerun.GameRun
+```
 
-3. Compile e execute a classe principal `GameRun.java`.
+## 🎮 Como Jogar
 
-4. O jogo solicitará a entrada do jogador (um número de 1 a 9) e exibirá o estado atual do tabuleiro após cada jogada.
+1. O jogo começa com o jogador 'X'
+2. Digite um número de 1 a 9 para fazer sua jogada
+3. As posições do tabuleiro são numeradas assim:
+```
+ 1 | 2 | 3 
+-----------
+ 4 | 5 | 6 
+-----------
+ 7 | 8 | 9 
+```
+4. Os jogadores alternam turnos até que alguém vença ou ocorra empate
 
-## Como Jogar
+## 📺 Exemplo de Execução
 
-- O jogador será solicitado a digitar um número de 1 a 9, onde cada número corresponde a uma posição no tabuleiro (veja o exemplo abaixo).
-  
-  Exemplo de como o tabuleiro é exibido:
-  
-  ```
-   X | O | -
-  -----------
-   - | X | O
-  -----------
-   O | - | X
-  ```
+```
+ - | - | -
+----------
+ - | - | -
+----------
+ - | - | -
 
-- O jogo verifica automaticamente se há um vencedor ou se o jogo terminou em empate.
-  
-## Estrutura do Projeto
+Digite um valor de 1-9: 5
+ - | - | -
+----------
+ - | X | -
+----------
+ - | - | -
 
-- `Board.java`: Classe responsável pelo tabuleiro do jogo. Contém a lista que armazena as posições e métodos para manipulação do tabuleiro, como obter e alterar valores das posições e exibir o tabuleiro.
-- `GameRun.java`: Classe responsável pela execução do jogo. Controla a sequência de jogadas e interações com o usuário.
-- `JogoDaVelha.java`: Contém toda a lógica do jogo, incluindo a verificação de vitória, empate e controle dos turnos dos jogadores.
+Digite um valor de 1-9: 1
+ O | - | -
+----------
+ - | X | -
+----------
+ - | - | -
+
+[...]
+
+ O | X | O
+----------
+ - | X | -
+----------
+ - | X | -
+
+Jogador X venceu!
+```
+
+## 🔍 Classes Principais
+
+### Board
+- Gerencia o estado do tabuleiro
+- Implementa a visualização do jogo
+- Controla as posições das jogadas
+
+### GameManager
+- Controla o fluxo do jogo
+- Verifica condições de vitória e empate
+- Gerencia a alternância de jogadores
+- Valida as jogadas
+
+### GameRun
+- Classe principal que inicializa o jogo
+- Cria a instância do GameManager
